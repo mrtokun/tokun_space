@@ -14,9 +14,11 @@
     </head>
     
 <body>
-    {% include 'galeria/partials/_cabecalho.html' %}
-    {% include 'galeria/partials/_menu.html' %}
+    {% include 'partials/_cabecalho.html' %}
+    {% include 'partials/_menu.html' %}
+    {% if user.is_authenticated %}
     {% block content %}{% endblock %}
-    {% include 'galeria/partials/_footer.html' %}
+    {% endif %}
+    {% include 'partials/_footer.html' %}
 </body>
 </html>    

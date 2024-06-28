@@ -1,0 +1,10 @@
+{% load static %}
+<main class="principal">
+    <section class="menu-lateral">
+        <nav class="menu-lateral__navegacao">
+            <a href="{% url 'index2' %}"><img src="{% static '/assets/ícones/1x/Home - ativo.png' %}"> Home</a>
+            <a href="{% url 'logon'%}"><img src="{% static '/assets/ícones/1x/Mais vistas - inativo.png' %}">Logon</a>
+            <a href="{% url 'cadastrar'%}"><img src="{% static '/assets/ícones/1x/Novas - inativo.png' %}"> Usuários</a>
+            <a href="{% url 'logoff'%}"><img src="{% static '/assets/ícones/1x/Surpreenda-me - inativo.png' %}"> Logoff</a>
+        </nav>
+    </section>
