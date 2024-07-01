@@ -1,11 +1,11 @@
-{% extends 'galeria/base.html' %}
+{% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
             <section class="conteudo">
                 <section class="imagem">
                     <div class="imagem__conteudo">
                         {% if fotografia.foto == null or fotografia.foto == "" %}
-                            	<img class="card__imagem" src="{% static '/assets/imagens/galeria/not-found.png'%}">
+                            	<img class="card__imagem" src="{% static 'assets/imagens/galeria/not-found.png'%}">
                         {% else %}        
                             <img class="card__imagem" src="{{ fotografia.foto.url }}">
                             {% endif %}
@@ -15,6 +15,10 @@
                                     <p class="imagem__descricao">{{ fotografia.legenda }}</p>
                                     <p class="imagem__texto">{{ fotografia.descricao }}</p>
                                 </div>
+                            </div>
+                            <div>
+                                <a href="{% url 'editar_imagem' fotografia.id %}"><button class="btn btn-success col-12" style="padding: top 5px;">Editar</button></a>
+                                <a href="{% url 'remover_imagem' fotografia.id %}"><button class="btn btn-danger col-12" style="padding: top 5px;">Remover</button></a>
                             </div>
                     </div>
                 </section>
